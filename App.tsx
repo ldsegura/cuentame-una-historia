@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, Text, View } from "react-native";
+import {
+  createStackNavigator,
+  //CardStyleInterpolators,
+} from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import SceneName from "./src/constants/SceneName";
+import MainScreen from "./src/screens/MainScreen";
+import { StatusBar } from "expo-status-bar";
 
-export default function App() {
+const Stack = createStackNavigator();
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="dark" />
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName={SceneName.Main}
+          screenOptions={{
+            headerShown: false,
+            // headerBackTitle: "Volver",
+            // headerTitleAlign: "center",
+            // headerStyle: {
+            //   backgroundColor: theme.colors.headerBackground,
+            // },
+            // headerTitleStyle: {
+            //   fontFamily: theme.typography.fontFamily.bold,
+            //   fontSize: 20,
+            //   color: theme.colors.text,
+            // },
+            // cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,
+          }}
+        >
+          {/* <Stack.Group>
+          <Stack.Screen name={SceneName.Authentication} component={LoginView} />
+          <Stack.Screen
+            name={SceneName.Registration}
+            component={RegistrationView}
+          />
+        </Stack.Group> */}
+          <Stack.Group>
+            <Stack.Screen name={SceneName.Main} component={MainScreen} />
+          </Stack.Group>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
