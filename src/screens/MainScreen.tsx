@@ -2,8 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, Text, View } from "react-native";
 import ScreenName from "../constants/ScreenName";
-import { CategoryScreen, DashboardScreen, ViewHistoryScreen } from "../screens";
-import CategorySelectScreen from "./CategorySelectScreen";
+import { CategoryScreen, DashboardScreen, ViewHistoryScreen, CategorySelectScreen } from "../screens";
 
 function SettingsScreen({ navigation }: { navigation: any }) {
   return (
@@ -17,17 +16,17 @@ function SettingsScreen({ navigation }: { navigation: any }) {
   );
 }
 
-function ProfileScreen({ navigation }: { navigation: any }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Profile Screen</Text>
-      <Button
-        title="Go to Settings"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </View>
-  );
-}
+// function ProfileScreen({ navigation }: { navigation: any }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Profile Screen</Text>
+//       <Button
+//         title="Go to Settings"
+//         onPress={() => navigation.navigate("Details")}
+//       />
+//     </View>
+//   );
+// }
 
 function DetailsScreen({ navigation }: { navigation: any }) {
   return (
@@ -56,17 +55,6 @@ const MainScreen = () => {
       initialRouteName={navigatorNames.initial}
       screenOptions={{ headerShown: false }}
     >
-      {/* <Tab.Screen name="First">
-          {() => (
-            <SettingsStack.Navigator>
-              <SettingsStack.Screen
-                name="Settings"
-                component={SettingsScreen}
-              />
-              <SettingsStack.Screen name="Profile" component={ProfileScreen} />
-            </SettingsStack.Navigator>
-          )}
-        </Tab.Screen> */}
       <Tab.Screen name={navigatorNames.initial}>
         {() => (
           <HomeStack.Navigator screenOptions={{ headerShown: true }}>
@@ -93,12 +81,6 @@ const MainScreen = () => {
                 headerTitle: "Categorías" //TODO metiendo al contexto el elemento visible puedo recuperar el nombre y agregarlo aqui
               }}
               component={CategorySelectScreen} />
-            {/* <CategoryStack.Screen name="Profile"
-              options={{
-                headerBackTitle: "Regresar",
-                headerTitle: "Categorias" //TODO metiendo al contexto el elemento visible puedo recuperar el nombre y agregarlo aqui
-              }}
-              component={ProfileScreen} /> */}
             <CategoryStack.Screen name="Details" component={DetailsScreen} />
           </CategoryStack.Navigator>
         )}
@@ -110,7 +92,7 @@ const MainScreen = () => {
             <SettingsStack.Screen name="Details" component={DetailsScreen} />
           </SettingsStack.Navigator>
         )}
-      </Tab.Screen>
+      </Tab.Screen> 
     </Tab.Navigator>
   );
 };

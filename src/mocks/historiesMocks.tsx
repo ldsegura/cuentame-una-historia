@@ -2502,8 +2502,14 @@ const historiesMocks = {
   histories: [
     history,
     history2,
-    //history3,
   ],
+  historiesToDay:{
+    count: 10,
+    data: [
+      history,
+      history2,
+    ]
+  },
   historyTop: [history3, history2, history, history2, history2],
   getHistoriesbyCategory
 };

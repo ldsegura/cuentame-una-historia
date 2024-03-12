@@ -1,7 +1,8 @@
 import { Text, View } from "react-native";
 import theme from "../../../theme";
 
-const DBNewsHistories = () => {
+const DBNewsHistories = (props: any) => {
+  const {count = 0} = props;
   return (
     <View
       style={{
@@ -14,7 +15,7 @@ const DBNewsHistories = () => {
       }}
     >
       <Text style={{ textAlign: "center", fontWeight: "bold" }}>
-        38 Publicaciones nuevas el día de hoy
+        {`${count} ${count === 1? "Publicación": "Publicaciones"} nuevas el día de hoy`}
       </Text>
     </View>
   );

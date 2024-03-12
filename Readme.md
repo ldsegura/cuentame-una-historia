@@ -1,0 +1,2 @@
+#Publicar
+npx eas update

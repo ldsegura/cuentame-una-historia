@@ -18,38 +18,38 @@ import { useState } from "react";
 // }
 
 const DashboardScreen = ({ navigation }: { navigation: any }) => {
-  const [ data, setData] = useState(historiesMocks.data);
+  const [data, setData] = useState(historiesMocks.data);
   const insideTypes = {
     discovery: "discovery",
     publishToDayInformation: "publishToDayInformation",
     publishToDay: "publishToDay",
     publishToMonth: "publishToMonth",
-  }
+  };
   const dataRenders = [
     {
       id: 1,
-      type: insideTypes.discovery
+      type: insideTypes.discovery,
     },
     {
       id: 2,
-      type: insideTypes.publishToDayInformation
+      type: insideTypes.publishToDayInformation,
     },
     {
       id: 3,
-      type: insideTypes.publishToDay
+      type: insideTypes.publishToDay,
     },
     {
       id: 4,
-      type: insideTypes.publishToMonth
+      type: insideTypes.publishToMonth,
     },
-  ]
+  ];
 
   const onClicktoNavigationHistory = (item: any) => {
-    navigation.navigate(ScreenName.ViewHistory, { id: item.id})
-  }
+    navigation.navigate(ScreenName.ViewHistory, { id: item.id });
+  };
   const onClicktoNavigationCategory = (keyname: string) => {
-    navigation.navigate(ScreenName.CategorySelected, { keyname: keyname})
-  }
+    navigation.navigate(ScreenName.CategorySelected, { keyname: keyname });
+  };
   return (
     <View style={styles.container}>
       <FlatList contentContainerStyle={{gap: 10, paddingHorizontal: 20}}
@@ -75,8 +75,8 @@ const DashboardScreen = ({ navigation }: { navigation: any }) => {
           return (
             <>
               {item.type === insideTypes.discovery && <DBInfoInitial key={index} />}
-              {item.type === insideTypes.publishToDayInformation && <DBNewsHistories  key={index}/>}
-              {item.type === insideTypes.publishToDay && <SectionBDNewsHistoriesToDay histories={historiesMocks.histories}  key={index} onclickHistory={onClicktoNavigationHistory} onClickCategory={onClicktoNavigationCategory} />}
+              {item.type === insideTypes.publishToDayInformation && <DBNewsHistories count={historiesMocks.historiesToDay.count}  key={index}/>}
+              {item.type === insideTypes.publishToDay && <SectionBDNewsHistoriesToDay histories={historiesMocks.historiesToDay.data}  key={index} onclickHistory={onClicktoNavigationHistory} onClickCategory={onClicktoNavigationCategory} />}
               {item.type === insideTypes.publishToMonth && <SectionBDMonth histories={[data[0],data[1],data[2],data[3],data[4],data[5]]}  key={index} onclickHistory={onClicktoNavigationHistory} onClickCategory={onClicktoNavigationCategory}/>}
             </>
           );

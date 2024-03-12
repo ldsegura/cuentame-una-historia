@@ -1,5 +1,5 @@
+import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Button, Text, View } from "react-native";
 import {
   createStackNavigator,
   //CardStyleInterpolators,
@@ -7,7 +7,6 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import SceneName from "./src/constants/SceneName";
 import MainScreen from "./src/screens/MainScreen";
-import { StatusBar } from "expo-status-bar";
 
 const Stack = createStackNavigator();
 const App = () => {
