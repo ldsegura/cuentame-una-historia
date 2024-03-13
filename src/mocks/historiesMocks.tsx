@@ -2,7 +2,7 @@ import categoriesMocks from "./categoriesMocks";
 
 const autor = {
   name: "",
-  nickname: "suanhero",
+  username: "suanhero",
 };
 
 const history: IHistory = {
@@ -19,6 +19,7 @@ const history: IHistory = {
     
     En un momento de verdad, Ian y Alira compartieron un último hechizo, desbloqueando el poder del Orbe y liberando su energía antigua en el bosque. Con su misión cumplida, Ian y Alira comprendieron que su encuentro no fue un accidente, sino el inicio de una nueva aventura juntos, donde la magia y el amor se entrelazaban en el Bosque Encantado.`,
   categories: [categoriesMocks.fantasia, categoriesMocks.romance],
+  //@ts-ignore
   autor,
   created_at: new Date(),
 };
@@ -37,6 +38,7 @@ const history2: IHistory = {
     
     En una noche especial, bajo el dosel de las estrellas brillantes, Daniel tomó la mano de Laura y le confesó su amor en palabras sinceras y dulces. Con lágrimas de felicidad en sus ojos, Laura aceptó su amor y sellaron su unión con un beso tierno y eterno, en el Café de las Estrellas, donde los sueños se hacían realidad y el amor florecía en cada taza de café.`,
   categories: [categoriesMocks.fantasia],
+  //@ts-ignore
   autor,
   created_at: new Date(),
 };
@@ -55,6 +57,7 @@ const history3: IHistory = {
     
     En una noche especial, bajo el dosel de las estrellas brillantes, Daniel tomó la mano de Laura y le confesó su amor en palabras sinceras y dulces. Con lágrimas de felicidad en sus ojos, Laura aceptó su amor y sellaron su unión con un beso tierno y eterno, en el Café de las Estrellas, donde los sueños se hacían realidad y el amor florecía en cada taza de café.`,
   categories: [categoriesMocks.fantasia],
+  //@ts-ignore
   autor,
   created_at: new Date(),
 };
@@ -113,7 +116,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Hugues Vickerman",
-        nickname: "hvickerman0",
+        username: "hvickerman0",
       },
       created_at: "2023-05-05 03:02:48",
     },
@@ -134,7 +137,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Dorene Armstead",
-        nickname: "darmstead1",
+        username: "darmstead1",
       },
       created_at: "2023-06-03 18:05:39",
     },
@@ -151,7 +154,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Ruthanne Cubbin",
-        nickname: "rcubbin2",
+        username: "rcubbin2",
       },
       created_at: "2024-02-09 05:24:25",
     },
@@ -176,7 +179,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Bellanca Coale",
-        nickname: "bcoale3",
+        username: "bcoale3",
       },
       created_at: "2023-10-24 22:12:07",
     },
@@ -189,7 +192,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Karina Hambribe",
-        nickname: "khambribe4",
+        username: "khambribe4",
       },
       created_at: "2023-04-11 13:00:29",
     },
@@ -207,7 +210,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Seline Pringuer",
-        nickname: "springuer5",
+        username: "springuer5",
       },
       created_at: "2024-03-06 02:33:25",
     },
@@ -236,7 +239,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Aharon Ratnage",
-        nickname: "aratnage6",
+        username: "aratnage6",
       },
       created_at: "2023-11-17 16:46:44",
     },
@@ -265,7 +268,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Kyle Chase",
-        nickname: "kchase7",
+        username: "kchase7",
       },
       created_at: "2023-04-04 21:36:50",
     },
@@ -299,7 +302,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Andie Harg",
-        nickname: "aharg8",
+        username: "aharg8",
       },
       created_at: "2023-10-29 17:41:09",
     },
@@ -311,7 +314,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Merilyn Anton",
-        nickname: "manton9",
+        username: "manton9",
       },
       created_at: "2024-02-21 13:35:54",
     },
@@ -341,7 +344,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Deborah Amar",
-        nickname: "damara",
+        username: "damara",
       },
       created_at: "2024-02-02 23:39:42",
     },
@@ -367,7 +370,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Candida Brobak",
-        nickname: "cbrobakb",
+        username: "cbrobakb",
       },
       created_at: "2024-02-19 18:31:38",
     },
@@ -401,7 +404,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Nikola Spawton",
-        nickname: "nspawtonc",
+        username: "nspawtonc",
       },
       created_at: "2023-11-30 00:50:11",
     },
@@ -422,7 +425,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Romy Wilden",
-        nickname: "rwildend",
+        username: "rwildend",
       },
       created_at: "2023-03-21 10:47:51",
     },
@@ -434,7 +437,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Darbie Haville",
-        nickname: "dhavillee",
+        username: "dhavillee",
       },
       created_at: "2024-02-19 15:42:44",
     },
@@ -446,7 +449,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Andie Garnam",
-        nickname: "agarnamf",
+        username: "agarnamf",
       },
       created_at: "2023-07-10 13:58:54",
     },
@@ -472,7 +475,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Shannan Bartles",
-        nickname: "sbartlesg",
+        username: "sbartlesg",
       },
       created_at: "2023-07-20 05:46:50",
     },
@@ -505,7 +508,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Pattin Grattan",
-        nickname: "pgrattanh",
+        username: "pgrattanh",
       },
       created_at: "2023-08-30 08:06:52",
     },
@@ -531,7 +534,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Marlo Stanbrooke",
-        nickname: "mstanbrookei",
+        username: "mstanbrookei",
       },
       created_at: "2024-01-04 04:15:33",
     },
@@ -564,7 +567,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Eberhard Foad",
-        nickname: "efoadj",
+        username: "efoadj",
       },
       created_at: "2023-06-09 09:04:54",
     },
@@ -598,7 +601,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Sloan Pesek",
-        nickname: "spesekk",
+        username: "spesekk",
       },
       created_at: "2024-02-22 03:39:38",
     },
@@ -624,7 +627,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Del Snodden",
-        nickname: "dsnoddenl",
+        username: "dsnoddenl",
       },
       created_at: "2023-04-20 03:16:13",
     },
@@ -649,7 +652,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Rose Drysdale",
-        nickname: "rdrysdalem",
+        username: "rdrysdalem",
       },
       created_at: "2023-07-25 04:28:07",
     },
@@ -683,7 +686,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Donnajean Gatecliff",
-        nickname: "dgatecliffn",
+        username: "dgatecliffn",
       },
       created_at: "2023-12-13 19:12:03",
     },
@@ -712,7 +715,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Valentin Aleshkov",
-        nickname: "valeshkovo",
+        username: "valeshkovo",
       },
       created_at: "2024-01-20 06:11:15",
     },
@@ -731,7 +734,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Jorry Paolazzi",
-        nickname: "jpaolazzip",
+        username: "jpaolazzip",
       },
       created_at: "2023-12-16 18:18:21",
     },
@@ -761,7 +764,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Olivette Titterington",
-        nickname: "otitteringtonq",
+        username: "otitteringtonq",
       },
       created_at: "2023-10-12 08:54:42",
     },
@@ -774,7 +777,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Dannie Pollins",
-        nickname: "dpollinsr",
+        username: "dpollinsr",
       },
       created_at: "2023-04-17 02:46:07",
     },
@@ -795,7 +798,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Elga Stratiff",
-        nickname: "estratiffs",
+        username: "estratiffs",
       },
       created_at: "2023-04-26 09:23:38",
     },
@@ -821,7 +824,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Skippy Paxton",
-        nickname: "spaxtont",
+        username: "spaxtont",
       },
       created_at: "2023-12-03 14:45:18",
     },
@@ -838,7 +841,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Carver Rugg",
-        nickname: "cruggu",
+        username: "cruggu",
       },
       created_at: "2023-05-02 18:57:20",
     },
@@ -856,7 +859,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Cherice Hamner",
-        nickname: "chamnerv",
+        username: "chamnerv",
       },
       created_at: "2023-10-07 09:45:20",
     },
@@ -889,7 +892,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Evelyn Emblow",
-        nickname: "eembloww",
+        username: "eembloww",
       },
       created_at: "2023-11-10 09:08:18",
     },
@@ -922,7 +925,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Lee Stiffell",
-        nickname: "lstiffellx",
+        username: "lstiffellx",
       },
       created_at: "2023-07-12 18:18:07",
     },
@@ -952,7 +955,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Tamara Jikovsky",
-        nickname: "tjikovskyy",
+        username: "tjikovskyy",
       },
       created_at: "2023-11-10 19:36:26",
     },
@@ -985,7 +988,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Shelagh Colcomb",
-        nickname: "scolcombz",
+        username: "scolcombz",
       },
       created_at: "2023-09-11 13:38:13",
     },
@@ -1006,7 +1009,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Andee O'Shirine",
-        nickname: "aoshirine10",
+        username: "aoshirine10",
       },
       created_at: "2023-10-25 03:58:57",
     },
@@ -1028,7 +1031,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Lennie Winley",
-        nickname: "lwinley11",
+        username: "lwinley11",
       },
       created_at: "2024-01-05 14:24:06",
     },
@@ -1053,7 +1056,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Laverne Dougan",
-        nickname: "ldougan12",
+        username: "ldougan12",
       },
       created_at: "2024-03-01 14:18:47",
     },
@@ -1075,7 +1078,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Evangelina Fernandes",
-        nickname: "efernandes13",
+        username: "efernandes13",
       },
       created_at: "2023-04-18 22:57:02",
     },
@@ -1092,7 +1095,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Claude Blasoni",
-        nickname: "cblasoni14",
+        username: "cblasoni14",
       },
       created_at: "2024-03-06 13:44:48",
     },
@@ -1114,7 +1117,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Caz Yardley",
-        nickname: "cyardley15",
+        username: "cyardley15",
       },
       created_at: "2024-01-13 14:49:31",
     },
@@ -1127,7 +1130,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Geoffry Matfield",
-        nickname: "gmatfield16",
+        username: "gmatfield16",
       },
       created_at: "2023-05-20 20:05:23",
     },
@@ -1152,7 +1155,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Ringo O'Hartnett",
-        nickname: "rohartnett17",
+        username: "rohartnett17",
       },
       created_at: "2023-04-12 14:30:40",
     },
@@ -1182,7 +1185,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Thorsten Verne",
-        nickname: "tverne18",
+        username: "tverne18",
       },
       created_at: "2023-07-22 12:20:54",
     },
@@ -1215,7 +1218,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Efrem Raubenheim",
-        nickname: "eraubenheim19",
+        username: "eraubenheim19",
       },
       created_at: "2023-12-20 04:26:05",
     },
@@ -1228,7 +1231,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Laurette McNally",
-        nickname: "lmcnally1a",
+        username: "lmcnally1a",
       },
       created_at: "2024-02-02 10:48:00",
     },
@@ -1262,7 +1265,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Ferdy Challener",
-        nickname: "fchallener1b",
+        username: "fchallener1b",
       },
       created_at: "2023-08-04 13:28:01",
     },
@@ -1284,7 +1287,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Gwenni Deamer",
-        nickname: "gdeamer1c",
+        username: "gdeamer1c",
       },
       created_at: "2023-08-09 05:34:35",
     },
@@ -1305,7 +1308,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Karim Towl",
-        nickname: "ktowl1d",
+        username: "ktowl1d",
       },
       created_at: "2023-04-13 18:38:00",
     },
@@ -1339,7 +1342,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Theodor Chessell",
-        nickname: "tchessell1e",
+        username: "tchessell1e",
       },
       created_at: "2024-01-04 04:53:55",
     },
@@ -1360,7 +1363,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Julia Crisford",
-        nickname: "jcrisford1f",
+        username: "jcrisford1f",
       },
       created_at: "2023-05-06 12:32:35",
     },
@@ -1382,7 +1385,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Tomi Naerup",
-        nickname: "tnaerup1g",
+        username: "tnaerup1g",
       },
       created_at: "2023-06-07 03:24:29",
     },
@@ -1416,7 +1419,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Carmine Orrom",
-        nickname: "corrom1h",
+        username: "corrom1h",
       },
       created_at: "2023-03-13 01:49:14",
     },
@@ -1441,7 +1444,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Neddy Stut",
-        nickname: "nstut1i",
+        username: "nstut1i",
       },
       created_at: "2023-09-06 04:22:22",
     },
@@ -1474,7 +1477,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Blakelee Olivetti",
-        nickname: "bolivetti1j",
+        username: "bolivetti1j",
       },
       created_at: "2024-02-05 06:02:24",
     },
@@ -1508,7 +1511,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Marya Olphert",
-        nickname: "molphert1k",
+        username: "molphert1k",
       },
       created_at: "2023-03-30 16:16:41",
     },
@@ -1538,7 +1541,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Sara Veighey",
-        nickname: "sveighey1l",
+        username: "sveighey1l",
       },
       created_at: "2023-10-09 00:12:12",
     },
@@ -1550,7 +1553,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Suzie Plevin",
-        nickname: "splevin1m",
+        username: "splevin1m",
       },
       created_at: "2023-05-23 12:02:35",
     },
@@ -1583,7 +1586,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Olly Cattrall",
-        nickname: "ocattrall1n",
+        username: "ocattrall1n",
       },
       created_at: "2023-04-29 14:18:37",
     },
@@ -1595,7 +1598,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Cherrita Rylstone",
-        nickname: "crylstone1o",
+        username: "crylstone1o",
       },
       created_at: "2023-10-22 13:35:52",
     },
@@ -1629,7 +1632,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Hilton Spaice",
-        nickname: "hspaice1p",
+        username: "hspaice1p",
       },
       created_at: "2023-07-24 08:50:02",
     },
@@ -1650,7 +1653,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Shelden Gantzer",
-        nickname: "sgantzer1q",
+        username: "sgantzer1q",
       },
       created_at: "2023-06-03 08:46:55",
     },
@@ -1676,7 +1679,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Florina Hincks",
-        nickname: "fhincks1r",
+        username: "fhincks1r",
       },
       created_at: "2024-03-05 07:46:39",
     },
@@ -1694,7 +1697,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Foster Hartwright",
-        nickname: "fhartwright1s",
+        username: "fhartwright1s",
       },
       created_at: "2023-12-03 11:30:05",
     },
@@ -1727,7 +1730,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Shaw Bunn",
-        nickname: "sbunn1t",
+        username: "sbunn1t",
       },
       created_at: "2023-11-06 11:18:07",
     },
@@ -1744,7 +1747,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Sonni Tremble",
-        nickname: "stremble1u",
+        username: "stremble1u",
       },
       created_at: "2023-07-19 01:41:40",
     },
@@ -1765,7 +1768,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Rockwell Crayden",
-        nickname: "rcrayden1v",
+        username: "rcrayden1v",
       },
       created_at: "2023-04-08 08:00:57",
     },
@@ -1787,7 +1790,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Mark Vernau",
-        nickname: "mvernau1w",
+        username: "mvernau1w",
       },
       created_at: "2023-06-13 17:39:00",
     },
@@ -1805,7 +1808,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Teddy Bridell",
-        nickname: "tbridell1x",
+        username: "tbridell1x",
       },
       created_at: "2023-05-19 19:07:36",
     },
@@ -1839,7 +1842,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Netti Bansal",
-        nickname: "nbansal1y",
+        username: "nbansal1y",
       },
       created_at: "2023-10-29 04:15:07",
     },
@@ -1868,7 +1871,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Reube Doornbos",
-        nickname: "rdoornbos1z",
+        username: "rdoornbos1z",
       },
       created_at: "2023-08-12 03:41:00",
     },
@@ -1893,7 +1896,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Federico Hazelgrove",
-        nickname: "fhazelgrove20",
+        username: "fhazelgrove20",
       },
       created_at: "2024-02-05 12:36:12",
     },
@@ -1919,7 +1922,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Borden Cristol",
-        nickname: "bcristol21",
+        username: "bcristol21",
       },
       created_at: "2023-12-26 18:37:21",
     },
@@ -1932,7 +1935,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Karalee Regenhardt",
-        nickname: "kregenhardt22",
+        username: "kregenhardt22",
       },
       created_at: "2023-12-23 16:33:32",
     },
@@ -1962,7 +1965,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Morly Facher",
-        nickname: "mfacher23",
+        username: "mfacher23",
       },
       created_at: "2023-12-31 12:40:21",
     },
@@ -1975,7 +1978,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Sibilla Bulward",
-        nickname: "sbulward24",
+        username: "sbulward24",
       },
       created_at: "2023-04-12 04:28:10",
     },
@@ -1993,7 +1996,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Brewer Beste",
-        nickname: "bbeste25",
+        username: "bbeste25",
       },
       created_at: "2023-12-22 18:12:03",
     },
@@ -2011,7 +2014,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Joanie O'Lennane",
-        nickname: "jolennane26",
+        username: "jolennane26",
       },
       created_at: "2023-10-10 09:35:25",
     },
@@ -2037,7 +2040,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Christyna Kynsey",
-        nickname: "ckynsey27",
+        username: "ckynsey27",
       },
       created_at: "2023-05-25 17:56:31",
     },
@@ -2049,7 +2052,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Cyrillus Haldane",
-        nickname: "chaldane28",
+        username: "chaldane28",
       },
       created_at: "2023-10-21 14:00:14",
     },
@@ -2066,7 +2069,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Garwood McLaughlin",
-        nickname: "gmclaughlin29",
+        username: "gmclaughlin29",
       },
       created_at: "2023-12-01 16:40:25",
     },
@@ -2088,7 +2091,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Urbain L'Homme",
-        nickname: "ulhomme2a",
+        username: "ulhomme2a",
       },
       created_at: "2024-01-29 17:48:31",
     },
@@ -2101,7 +2104,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Steward Leaves",
-        nickname: "sleaves2b",
+        username: "sleaves2b",
       },
       created_at: "2023-08-07 09:52:52",
     },
@@ -2118,7 +2121,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Verge Soff",
-        nickname: "vsoff2c",
+        username: "vsoff2c",
       },
       created_at: "2023-06-18 06:15:21",
     },
@@ -2131,7 +2134,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Glenna Repp",
-        nickname: "grepp2d",
+        username: "grepp2d",
       },
       created_at: "2023-07-30 17:34:14",
     },
@@ -2164,7 +2167,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Johann Pautard",
-        nickname: "jpautard2e",
+        username: "jpautard2e",
       },
       created_at: "2023-07-10 13:28:52",
     },
@@ -2186,7 +2189,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Bernelle Dalgarnocht",
-        nickname: "bdalgarnocht2f",
+        username: "bdalgarnocht2f",
       },
       created_at: "2023-08-09 03:42:41",
     },
@@ -2198,7 +2201,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Zorana Jirik",
-        nickname: "zjirik2g",
+        username: "zjirik2g",
       },
       created_at: "2023-03-18 03:12:12",
     },
@@ -2215,7 +2218,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Raimund Strute",
-        nickname: "rstrute2h",
+        username: "rstrute2h",
       },
       created_at: "2023-06-28 04:33:40",
     },
@@ -2248,7 +2251,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Jordanna Braunroth",
-        nickname: "jbraunroth2i",
+        username: "jbraunroth2i",
       },
       created_at: "2023-09-21 10:01:29",
     },
@@ -2281,7 +2284,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Ellerey M'Quhan",
-        nickname: "emquhan2j",
+        username: "emquhan2j",
       },
       created_at: "2023-09-02 06:51:38",
     },
@@ -2303,7 +2306,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Lynnette Astupenas",
-        nickname: "lastupenas2k",
+        username: "lastupenas2k",
       },
       created_at: "2023-09-11 20:35:10",
     },
@@ -2316,7 +2319,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Wallis Hadingham",
-        nickname: "whadingham2l",
+        username: "whadingham2l",
       },
       created_at: "2023-12-19 19:43:38",
     },
@@ -2350,7 +2353,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Miguela Gregoli",
-        nickname: "mgregoli2m",
+        username: "mgregoli2m",
       },
       created_at: "2023-11-15 07:37:04",
     },
@@ -2362,7 +2365,7 @@ const renderdata = () => {
       categories: [],
       autor: {
         name: "Sharai Holbury",
-        nickname: "sholbury2n",
+        username: "sholbury2n",
       },
       created_at: "2023-11-26 07:28:15",
     },
@@ -2383,7 +2386,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Donovan Shields",
-        nickname: "dshields2o",
+        username: "dshields2o",
       },
       created_at: "2023-07-15 22:03:20",
     },
@@ -2412,7 +2415,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Jorey Wrankling",
-        nickname: "jwrankling2p",
+        username: "jwrankling2p",
       },
       created_at: "2024-01-01 01:25:14",
     },
@@ -2445,7 +2448,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Koral Dunlop",
-        nickname: "kdunlop2q",
+        username: "kdunlop2q",
       },
       created_at: "2024-01-18 07:44:27",
     },
@@ -2462,7 +2465,7 @@ const renderdata = () => {
       ],
       autor: {
         name: "Pamelina Margerrison",
-        nickname: "pmargerrison2r",
+        username: "pmargerrison2r",
       },
       created_at: "2023-10-19 20:19:49",
     },

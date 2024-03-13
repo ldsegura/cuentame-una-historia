@@ -11,11 +11,15 @@ import historiesMocks from "../../mocks/historiesMocks";
 import theme from "../../theme";
 import LabelAutor from "../../components/ui/LabelAutor";
 import Tag from "../../components/ui/Tag";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import SectionViewHistory from "./components/SectionViewHistory";
+import { supabase } from "../../../lib/supabase";
+import { Session } from "@supabase/supabase-js";
 
 const ViewHistoryScreen = (props: any) => {
   const { navigation, route } = props;
   const [sizeFontText, setSizeFontText] = useState(15);
+  const [session, setSession] = useState<Session | null>(null);
   const { id } = route.params;
   const history = historiesMocks.data.find((item) => item.id === id);
 
@@ -28,11 +32,24 @@ const ViewHistoryScreen = (props: any) => {
     setSizeFontText(size <= 15 ? 15 : size);
   };
 
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (session) {
+        setSession(session);
+      }
+    });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        setSession(session);
+      }
+    });
+  }, []);
+  console.log(session)
   const convertirFormatoFecha = (fechaString: string | number | Date) => {
     // Crear un objeto Date a partir de la cadena de fecha
 
-    if(fechaString == undefined)
-      return "";
+    if (fechaString == undefined) return "";
 
     const fecha = new Date(fechaString);
 
@@ -79,13 +96,17 @@ const ViewHistoryScreen = (props: any) => {
               <Text style={{ fontWeight: "bold", paddingRight: 2 }}>
                 {"Fecha:"}
               </Text>
-              <Text>{history?.created_at ? convertirFormatoFecha(history?.created_at): 'Desconocido'}</Text>
+              <Text>
+                {history?.created_at
+                  ? convertirFormatoFecha(history?.created_at)
+                  : "Desconocido"}
+              </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <Text style={{ fontWeight: "bold", paddingRight: 2 }}>
                 {"Autor:"}
               </Text>
-              <Text>{history?.autor.nickname}</Text>
+              <Text>{history?.autor.username}</Text>
             </View>
           </View>
           <View style={{ flexDirection: "row" }}>
@@ -127,7 +148,11 @@ const ViewHistoryScreen = (props: any) => {
         >
           {history &&
             history.categories.map((item, i) => {
-              return <Tag key={i} keyname={item.keyname}>{item.name}</Tag>;
+              return (
+                <Tag key={i} keyname={item.keyname}>
+                  {item.name}
+                </Tag>
+              );
             })}
         </View>
         <View
@@ -147,12 +172,21 @@ const ViewHistoryScreen = (props: any) => {
             {history?.title}
           </Text>
           <View style={{ flexDirection: "row", paddingTop: 2 }}>
-            <LabelAutor by={"escrito por:"} autor={history?.autor.nickname} />
+            <LabelAutor by={"escrito por:"} autor={history?.autor.username} />
           </View>
         </View>
         <Text style={{ flex: 1, fontSize: sizeFontText }}>
           {history?.history}
         </Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: theme.colors.back,
+          padding: 10,
+          paddingVertical: 30,
+        }}
+      >
+        <SectionViewHistory idHistory={history?.id} idSession={session?.user.id} />
       </View>
     </ScrollView>
   );

@@ -97,7 +97,7 @@ const CardElementHistory = (props: Props) => {
       >
         <Text style={{ paddingRight: 2, fontSize: 12 }}>creado por</Text>
         <Text style={{ fontWeight: "bold", fontSize: 12 }}>
-          {history.autor.nickname}
+          {history.autor.username}
         </Text>
       </View>
       <View

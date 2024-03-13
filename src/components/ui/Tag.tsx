@@ -1,5 +1,6 @@
 import { Text, TouchableWithoutFeedback, View } from "react-native";
 import colorUtils from "../../utils/colorUtils";
+import theme from "../../theme";
 
 const Tag = (props: any) => {
   const { keyname = "", onPress } = props;
@@ -17,7 +18,7 @@ const Tag = (props: any) => {
           borderRadius: 4,
         }}
       >
-        <Text style={{ color: "white" }}>{props.children}</Text>
+        <Text style={{ color: theme.colors.white }}>{props.children}</Text>
       </View>
     </TouchableWithoutFeedback>
   );
