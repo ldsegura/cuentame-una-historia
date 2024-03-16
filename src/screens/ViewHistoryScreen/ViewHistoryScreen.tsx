@@ -15,13 +15,15 @@ import { useEffect, useState } from "react";
 import SectionViewHistory from "./components/SectionViewHistory";
 import { supabase } from "../../../lib/supabase";
 import { Session } from "@supabase/supabase-js";
+import historiesRepositories from "../../repositories/historiesRepositories";
+import ScreenName from "../../constants/ScreenName";
 
 const ViewHistoryScreen = (props: any) => {
   const { navigation, route } = props;
   const [sizeFontText, setSizeFontText] = useState(15);
   const [session, setSession] = useState<Session | null>(null);
   const { id } = route.params;
-  const history = historiesMocks.data.find((item) => item.id === id);
+  const [history, setHistory] = useState<IHistory | null | undefined>(null);
 
   const onclickMorefont = () => {
     const size = sizeFontText + 1;
@@ -31,6 +33,19 @@ const ViewHistoryScreen = (props: any) => {
     const size = sizeFontText - 1;
     setSizeFontText(size <= 15 ? 15 : size);
   };
+  const onClicktoNavigationCategory = (keyname: string) => {
+    navigation.navigate(ScreenName.CategorySelected, { keyname: keyname})
+  }
+  useEffect(() => {
+    const getHistory = async (id: number) => {
+      const response = await historiesRepositories.getHistory(id);
+      if (response) setHistory(response);
+      else setHistory(historiesMocks.data.find((item) => item.id === id));
+    };
+
+    if(id > 0)
+      getHistory(id);
+  }, [id]);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session }, error }) => {
@@ -45,7 +60,7 @@ const ViewHistoryScreen = (props: any) => {
       }
     });
   }, []);
-  console.log(session)
+
   const convertirFormatoFecha = (fechaString: string | number | Date) => {
     // Crear un objeto Date a partir de la cadena de fecha
 
@@ -69,6 +84,7 @@ const ViewHistoryScreen = (props: any) => {
     // Devolver la fecha formateada en el nuevo formato
     return `${diaFormateado}/${mesFormateado}/${año} ${horasFormateadas}:${minutosFormateados}`;
   };
+
   return (
     <ScrollView contentContainerStyle={styles.scrollView}>
       <View
@@ -97,8 +113,8 @@ const ViewHistoryScreen = (props: any) => {
                 {"Fecha:"}
               </Text>
               <Text>
-                {history?.created_at
-                  ? convertirFormatoFecha(history?.created_at)
+                {history?.aproved_at
+                  ? convertirFormatoFecha(history?.aproved_at)
                   : "Desconocido"}
               </Text>
             </View>
@@ -149,7 +165,7 @@ const ViewHistoryScreen = (props: any) => {
           {history &&
             history.categories.map((item, i) => {
               return (
-                <Tag key={i} keyname={item.keyname}>
+                <Tag key={i} onPress={onClicktoNavigationCategory} keyname={item.keyname}>
                   {item.name}
                 </Tag>
               );
@@ -186,7 +202,10 @@ const ViewHistoryScreen = (props: any) => {
           paddingVertical: 30,
         }}
       >
-        <SectionViewHistory idHistory={history?.id} idSession={session?.user.id} />
+        <SectionViewHistory
+          idHistory={history?.id}
+          idSession={session?.user.id}
+        />
       </View>
     </ScrollView>
   );

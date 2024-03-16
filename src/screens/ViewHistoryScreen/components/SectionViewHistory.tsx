@@ -12,11 +12,10 @@ const SectionViewHistory = (props: any) => {
   const arr = [0, 1, 2, 3, 4];
   useEffect(() => {
     setRate(-1);
-    console.log("asdasdas");
+
   }, [idHistory]);
 
   const onClickRate = (rt: number) => {
-    console.log(rt);
     setRate(rt);
   };
   const onSubmit = () => {
@@ -31,7 +30,7 @@ const SectionViewHistory = (props: any) => {
       Alert.alert("Inicia sesión para aydar a tu autor favorito");
     }
   };
-  console.log(rate);
+
   return (
     <View
       style={{
@@ -61,7 +60,6 @@ const SectionViewHistory = (props: any) => {
               <TouchableWithoutFeedback
                 key={index}
                 onPress={() => {
-                  console.log("que peod");
                   onClickRate(index);
                 }}
               >

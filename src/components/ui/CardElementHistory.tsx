@@ -9,7 +9,16 @@ import Tag from "./Tag";
 import { useState } from "react";
 import theme from "../../theme";
 import ViewTimer from "./ViewTimer";
-
+//@ts-ignore
+import book1 from "../../../assets/img/book_1.png";
+//@ts-ignore
+import book2 from "../../../assets/img/book_2.png";
+//@ts-ignore
+import book3 from "../../../assets/img/book_3.png";
+//@ts-ignore
+import book4 from "../../../assets/img/book_4.png";
+//@ts-ignore
+import book5 from "../../../assets/img/book_5.png";
 interface Props {
   history: IHistory;
   onclickHistory?: (item: any) => any;
@@ -19,6 +28,15 @@ interface Props {
 const CardElementHistory = (props: Props) => {
   const { history, onclickHistory, onClickCategory } = props;
   const [viewWidth, setViewWidth] = useState(0);
+  const randomNumber = Math.floor(Math.random() * 5);
+  const books = [
+    book1,
+    book2,
+    book3,
+    book4,
+    book5,
+  ]
+  const selectedBook = books[randomNumber];
 
   const onLayout = (event: any) => {
     const { width } = event.nativeEvent.layout;
@@ -39,7 +57,7 @@ const CardElementHistory = (props: Props) => {
           alignSelf: "flex-end",
         }}
       >
-        <ViewTimer date={history?.created_at} />
+        <ViewTimer date={history?.aproved_at} />
       </View>
       <TouchableWithoutFeedback onPress={handleclickHistory}>
         <View
@@ -57,9 +75,7 @@ const CardElementHistory = (props: Props) => {
                 width: 66,
                 height: 58,
               }}
-              source={{
-                uri: "https://img.icons8.com/arcade/64/book.png",
-              }}
+              source={selectedBook} //TODO cambiar el libro por numero de ranking o visitas
             />
           </View>
           <View

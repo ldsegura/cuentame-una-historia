@@ -5,5 +5,12 @@ interface IHistory {
     history: string;
     categories: Array<ICategory>,
     autor: User,
-    created_at: Date;
+    aproved_at: Date;
+    state: IStateHistory | null;
+}
+
+
+interface IStateHistory {
+    id: number;
+    name: string;
 }

@@ -24,6 +24,9 @@ import {
   IconSettings,
 } from "../components/ui/image/svg";
 import theme from "../theme";
+import MyHistoriesScreen from "./MyHistoriesScreen";
+import MyListHistoriesScreen from "./MyListHistoriesScreen";
+import MyListHistoriesRateScreen from "./MyListHistoriesRateScreen";
 
 //actualiza continuamente la sesion creo que deberia ir en la raiz
 AppState.addEventListener("change", (state) => {
@@ -112,7 +115,7 @@ const MainScreen = () => {
           tabBarLabel: ({ focused, children }) => (
             <Text
               style={{
-                color: focused ? theme.colors.primary : theme.colors.dark,
+                color: focused ? theme.colors.dark : theme.colors.primary,
                 fontSize: 12,
               }}
             >
@@ -121,7 +124,7 @@ const MainScreen = () => {
           ),
           tabBarIcon: ({ focused, color }) => (
             <IconHome
-              fill={focused ? theme.colors.primary : theme.colors.dark}
+              fill={focused ? theme.colors.dark : theme.colors.primary}
             />
           ),
         }}
@@ -142,6 +145,14 @@ const MainScreen = () => {
                 headerBackTitle: "Regresar",
               }}
             />
+            <HomeStack.Screen
+              name={ScreenName.CategorySelected}
+              options={{
+                headerBackTitle: "Regresar",
+                headerTitle: "Categorías", //TODO metiendo al contexto el elemento visible puedo recuperar el nombre y agregarlo aqui
+              }}
+              component={CategorySelectScreen}
+            />
           </HomeStack.Navigator>
         )}
       </Tab.Screen>
@@ -150,7 +161,7 @@ const MainScreen = () => {
           tabBarLabel: ({ focused, children }) => (
             <Text
               style={{
-                color: focused ? theme.colors.primary : theme.colors.dark,
+                color: focused ? theme.colors.dark : theme.colors.primary,
                 fontSize: 12,
               }}
             >
@@ -159,7 +170,7 @@ const MainScreen = () => {
           ),
           tabBarIcon: ({ focused, color }) => (
             <IconCategory
-              fill={focused ? theme.colors.primary : theme.colors.dark}
+              fill={focused ? theme.colors.dark : theme.colors.primary}
             />
           ),
         }}
@@ -206,7 +217,7 @@ const MainScreen = () => {
             tabBarLabel: ({ focused, children }) => (
               <Text
                 style={{
-                  color: focused ? theme.colors.primary : theme.colors.dark,
+                  color: focused ? theme.colors.dark : theme.colors.primary,
                   fontSize: 12,
                 }}
               >
@@ -215,7 +226,7 @@ const MainScreen = () => {
             ),
             tabBarIcon: ({ focused, color }) => (
               <IconSettings
-                fill={focused ? theme.colors.primary : theme.colors.dark}
+                fill={focused ? theme.colors.dark : theme.colors.primary}
               />
             ),
           };
@@ -241,6 +252,10 @@ const MainScreen = () => {
                   headerBackTitle: "Regresar",
                 }}
               />
+              <SettingsStack.Screen options={{ headerTitle: "Mis Historias" }} name={ScreenName.MyHistories} component={MyHistoriesScreen} />
+              <SettingsStack.Screen options={{ headerTitle: "Mis Historias" }} name={ScreenName.MyListHistories} component={MyListHistoriesScreen} />
+              <SettingsStack.Screen options={{ headerTitle: "Mis Recomenaciones" }} name={ScreenName.MyListHistoriesRate} component={MyListHistoriesRateScreen} />
+              {/* <SettingsStack.Screen name="Details" component={DetailsScreen} /> */}
               {/* <SettingsStack.Screen
                 name="Settings"
                 component={ProfileScreen}

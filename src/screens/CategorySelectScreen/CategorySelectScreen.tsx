@@ -8,6 +8,7 @@ import ScreenName from "../../constants/ScreenName";
 const CategorySelectScreen = (props: any) => {
   const { navigation, route } = props;
   const { keyname } = route.params;
+  console.log(keyname, "que pedo")
   const [histories, setHistories] = useState<Array<IHistory>>([]);
   const category = categoriesMocks.findCategorybyKeyname(keyname);
   useEffect(() => {

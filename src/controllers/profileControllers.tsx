@@ -8,7 +8,7 @@ const findProfileFromUUID = async (id: string | undefined) => {
     .single();
 
   if (data) return data;
-  else return null;
+  else return null; 
 };
 
 const profileControllers = {

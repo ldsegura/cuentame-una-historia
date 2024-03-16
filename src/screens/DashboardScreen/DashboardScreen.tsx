@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, FlatList } from "react-native";
+import { Button, StyleSheet, Text, View, FlatList, Alert } from "react-native";
 import theme from "../../theme";
 import historiesMocks from "../../mocks/historiesMocks";
 import DBInfoInitial from "./components/DBInfoInitial";
@@ -6,7 +6,9 @@ import DBNewsHistories from "./components/DBNewsHistories";
 import SectionBDNewsHistoriesToDay from "./components/SectionBDNewsHistoriesToDay";
 import SectionBDMonth from "./components/SectionBDMonth";
 import ScreenName from "../../constants/ScreenName";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import historiesControllers from "../../controllers/historiesControllers";
+import historiesRepositories from "../../repositories/historiesRepositories";
 
 // function HomeScreen({ navigation }: { navigation: any }) {
 //   return (
@@ -19,6 +21,11 @@ import { useState } from "react";
 
 const DashboardScreen = ({ navigation }: { navigation: any }) => {
   const [data, setData] = useState(historiesMocks.data);
+  const [historiesTheDay, setHistoriesTheDay] = useState<Array<IHistory>>([]);
+  const [historiesCountDay, setHistoriesCountDay] = useState<number | any>(0);
+  const [historiesTheMounth, setHistoriesTheMounth] = useState<Array<IHistory>>(
+    []
+  );
   const insideTypes = {
     discovery: "discovery",
     publishToDayInformation: "publishToDayInformation",
@@ -43,16 +50,35 @@ const DashboardScreen = ({ navigation }: { navigation: any }) => {
       type: insideTypes.publishToMonth,
     },
   ];
-
   const onClicktoNavigationHistory = (item: any) => {
     navigation.navigate(ScreenName.ViewHistory, { id: item.id });
   };
   const onClicktoNavigationCategory = (keyname: string) => {
+    console.log(keyname, ScreenName.CategorySelected)
     navigation.navigate(ScreenName.CategorySelected, { keyname: keyname });
   };
+
+  useEffect(() => {
+    const getHtoDay = async () => {
+      const response = await historiesRepositories.getHistoriesToday();
+      if (response) setHistoriesTheDay(response);
+    };
+    const getHtoMonth = async () => {
+      const response = await historiesRepositories.getHistoriesToMonth();
+      if (response) setHistoriesTheMounth(response);
+    };
+    const getCountHtoDay = async () => {
+      const response = await historiesRepositories.getCountHistoriesToDay();
+      if (response) setHistoriesCountDay(response);
+    };
+    getHtoDay();
+    getCountHtoDay();
+    getHtoMonth();
+  }, []);
   return (
     <View style={styles.container}>
-      <FlatList contentContainerStyle={{gap: 10, paddingHorizontal: 20}}
+      <FlatList
+        contentContainerStyle={{ gap: 10, paddingHorizontal: 20 }}
         //keyExtractor={(item) => item.id}
         // ListHeaderComponentStyle={{ flex: 1 }}
         // ListHeaderComponent={
@@ -74,10 +100,28 @@ const DashboardScreen = ({ navigation }: { navigation: any }) => {
         renderItem={({ item, index }) => {
           return (
             <>
-              {item.type === insideTypes.discovery && <DBInfoInitial key={index} />}
-              {item.type === insideTypes.publishToDayInformation && <DBNewsHistories count={historiesMocks.historiesToDay.count}  key={index}/>}
-              {item.type === insideTypes.publishToDay && <SectionBDNewsHistoriesToDay histories={historiesMocks.historiesToDay.data}  key={index} onclickHistory={onClicktoNavigationHistory} onClickCategory={onClicktoNavigationCategory} />}
-              {item.type === insideTypes.publishToMonth && <SectionBDMonth histories={[data[0],data[1],data[2],data[3],data[4],data[5]]}  key={index} onclickHistory={onClicktoNavigationHistory} onClickCategory={onClicktoNavigationCategory}/>}
+              {item.type === insideTypes.discovery && (
+                <DBInfoInitial key={index} />
+              )}
+              {item.type === insideTypes.publishToDayInformation && (
+                <DBNewsHistories count={historiesCountDay} key={index} />
+              )}
+              {item.type === insideTypes.publishToDay && (
+                <SectionBDNewsHistoriesToDay
+                  histories={historiesTheDay}
+                  key={index}
+                  onclickHistory={onClicktoNavigationHistory}
+                  onClickCategory={onClicktoNavigationCategory}
+                />
+              )}
+              {item.type === insideTypes.publishToMonth && (
+                <SectionBDMonth
+                  histories={historiesTheMounth}
+                  key={index}
+                  onclickHistory={onClicktoNavigationHistory}
+                  onClickCategory={onClicktoNavigationCategory}
+                />
+              )}
             </>
           );
         }}
